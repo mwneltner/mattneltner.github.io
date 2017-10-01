@@ -14,7 +14,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
+  font-size: 8em;
   font: inherit;
   vertical-align: baseline; }
 
@@ -47,7 +47,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 body {
   font-family: sans-serif;
-  color: #2a2a2a; }
+  color: #ff69b4; }
 
 a {
   color: #0388a6; }
