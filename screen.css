@@ -18,8 +18,15 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline; }
 
+  h1 {
+    font-family: sans-serif;
+    font-size: 2em;
+    color: #010408;
+    border: 1 border-style color #010408;
+    background-color: #E05A00; }
+
 body {
-  line-height: 1; }
+  line-height: 2; }
 
 ol, ul {
   list-style: none; }
