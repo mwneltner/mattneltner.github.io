@@ -4,20 +4,106 @@
   </head>
   
       <h1>Matt's Python Stuff</h1>
-
-     <textarea rows="30" cols= "30">
-      # Gas Mileage
-        print ('Hello World!')
-        print ('Mileage Claculator')
-        distance = float (input ("Distance? "))
-        gas = float (input ("Gallons of Gas? "))
-        mpg= distance//gas
-        print (mpg), print ("Miles Per Gallon")
-      </textarea>  
-      
+             
       <p>
         <a href="../index.html">Go Home</a>
       </p>
+
+      <textarea rows="30" cols= "30">
+        # Gas Mileage
+          print ('Hello World!')
+          print ('Mileage Claculator')
+          distance = float (input ("Distance? "))
+          gas = float (input ("Gallons of Gas? "))
+          mpg= distance//gas
+          print (mpg), print ("Miles Per Gallon")
+        </textarea>
+
+        <textarea rows="30" cols= "90">
+          # Rock, Paper Scissors
+          
+          affirmative = ["yes", "Yes", "YES", "sure", "Sure", "SURE", "OK", "ok", "y", "Y"]
+          
+          Rock = ["Rock", "ROCK", "R", "r"]
+          Paper = ["Paper", "PAPER", "P", "p"]
+          Scissors =["Scissors", "SCISSORS", "S", "s"]
+          
+          import random
+          
+          rps = [Rock, Paper, Scissors]
+          
+          computerChoice = rps[random.randint (0,2)]
+          Game1 = False
+          while Game1 == False:
+          
+              Name = input ("What is your name? ")
+              print ("Hello", Name)
+              Game1 = input ("Shall we play a game? ")
+              if Game1 in (affirmative):
+                  game2 = input("How about Global Thermonuclear War? ")
+                  if game2 in (affirmative):
+                      game3 = input ("How about Rock, Paper, Scissors? It's safer. ")
+                      if game3 in (affirmative):
+                          choice = input ("Type r for rock, s for scissors or p for paper or q to quit. ")
+                      else: print ("Good bye.")
+                  else: game3 = input ("How about Rock, Paper, Scissors? It's safer. ")
+                  if game3 in (affirmative):            
+                          choice = input ("Type r for rock, s for scissors or p for paper or q to quit. ")
+                          if (choice) == (computerChoice):
+                              print ("Tie")
+                          elif (choice)== Rock and (computerChoice) == Paper:
+                              print ("You Loose.")
+                          elif (choice)== Paper and (computerChoice) == Scissors:
+                               print ("You Loose.")
+                          elif (choice)== Scissors and (computerChoice) == Rock:
+                               print ("You Loose.")
+                          else: print ("You win :)")                
+                          if (choice) == ("q"):
+                              Game1 = True
+                              print ("Thank you. Good Bye.")
+              else: print ("Good bye.")
+          
+              print (choice, "Your choice")
+          
+          
+              print ((computerChoice), "Computer's choice")
+          
+              computerChoice = rps[random.randint (0,2)]
+                
+              
+             
+          
+          
+          </textarea>
+          
+          <textarea rows="30" cols= "80">
+            # Mastermind
+            
+            import random
+            import collections
+            
+            length = 4
+            pattern = [random.choice("abcdef") for _ in range (length)]
+                    
+            print (*pattern)
+            
+            def running():
+                guess = input ("Mastermind. Whats Your Guess?:    ")
+                counted = collections.Counter(pattern)
+                guess_count = collections.Counter(guess)
+                close = sum(min(counted[k], guess_count[k]) for k in counted)
+                exact = sum(a==b for a,b in zip(pattern, guess))
+                close -= exact
+                print ("Exact: {}. Close: {}.".format(exact, close))
+                return exact != length
+                
+            
+            
+            while running():
+                pass
+            print ("done")
+            
+            </textarea>
     </div>
   </body>
 </html>
