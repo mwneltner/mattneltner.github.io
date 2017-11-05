@@ -1,13 +1,16 @@
 function setup() {
   createCanvas (640, 480)
   }
-
+ 
+  
 function draw() {
     if (mouseIsPressed) {
-    fill (0,255,0);}
+    fill (150,75,110, 175);}
         else {
-    fill (255,0,0);}
-rect (mouseX, mouseY, 50,50)
-      if (mouseIsPressed){
-          rotate (pi/4);}
-}
+    fill (110,75,125,155);}
+    translate(580, 200);
+    noStroke();
+    for (var i = 0; i < 10; i ++) {
+      ellipse(mouseX, mouseY, 20, 80);
+      rotate(PI/5);}
+    }
