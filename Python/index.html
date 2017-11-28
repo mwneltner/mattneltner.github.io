@@ -76,7 +76,7 @@
           
           </textarea>
           
-          <textarea rows="30" cols= "80">
+          <textarea rows="30" cols= "60">
             # Mastermind
             
             import random
@@ -103,6 +103,182 @@
                 pass
             print ("done")
             
+            </textarea>
+
+            <textarea rows="30" cols= "80">
+                import random
+                
+                def readWords():
+                    wordList = []
+                    with open('wordlist.10000.txt') as wordFile:
+                        count = 0
+                        for line in wordFile:
+                            if len(line) > 4 and len(line) < 7:
+                                wordList.append(line[0:-1])
+                            
+                    return wordList
+                
+                words = readWords()
+                
+                word = (random.choice(words))
+                print(word)
+                
+                def f(x): #assumes x is list
+                    for line in x:
+                        print(line)
+                
+                def insertLetter(spaces, letter, pos):
+                    #_ _ _ _ ....
+                    #0123456 ....
+                    # pos * 2 --> location in spaces
+                    pos = pos * 2
+                    spaces = spaces[0:pos] + letter + spaces[pos + 1:]
+                    return spaces
+                
+                
+                pic =[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                pic[0]  = '         +---------+' #0
+                pic[1]  = '         |         |' #1
+                pic[2]  = '                   |' #2
+                pic[3]  = '                   |' #3
+                pic[4]  = '                   |' #4
+                pic[5]  = '                   |' #5
+                pic[6]  = '                   |' #6
+                pic[7]  = '                   |' #1
+                pic[8]  = '                   |' #2
+                pic[9]  = '                   |' #3
+                pic[10] = '                   |' #4
+                pic[11] = '                   |' #5
+                pic[12] = '                   |' #6
+                pic[13] = ' ------------------+' #8
+                
+                spaces = "_ " * len(word)
+                
+                def f(x): #assumes x is list
+                    for line in x:
+                        print(line)
+                misses = 0
+                correct = 0
+                answer = (len(word))
+                print (answer)
+                #main loop
+                while (misses < 6):
+                    guess = input("letter? ")
+                
+                    if guess in word:
+                        for i in range(answer):
+                            pos = word.index(guess)
+                            spaces = insertLetter(spaces, guess, pos)
+                        correct = (correct+1)
+                        print (answer)
+                        print ("Misses ", misses)
+                        print ("correct ", correct)
+                        if correct == (answer):
+                            print ("YOU WIN!")
+                    else:
+                        print("nope")
+                        misses = (misses+1)
+                        print ("Misses ", misses)
+                        if misses == 1:
+                            pic[0]  = '         +---------+' #0
+                            pic[1]  = '        _|_        |' #1
+                            pic[2]  = '       [___]       |' #2
+                            pic[3]  = '                   |' #3
+                            pic[4]  = '                   |' #4
+                            pic[5]  = '                   |' #5
+                            pic[6]  = '                   |' #6
+                            pic[7]  = '                   |' #1
+                            pic[8]  = '                   |' #2
+                            pic[9]  = '                   |' #3
+                            pic[10] = '                   |' #4
+                            pic[11] = '                   |' #5
+                            pic[12] = '                   |' #6
+                            pic[13] = ' ------------------+' #8
+                            
+                            
+                        elif misses ==2:
+                            pic[0]  = '         +---------+' #0
+                            pic[1]  = '        _|_        |' #1
+                            pic[2]  = '       [___]       |' #2
+                            pic[3]  = '      *******      |' #3
+                            pic[4]  = '      *     *      |' #4
+                            pic[5]  = '      *     *      |' #5
+                            pic[6]  = '      *     *      |' #6
+                            pic[7]  = '      *******      |' #1
+                            pic[8]  = '                   |' #2
+                            pic[9]  = '                   |' #3
+                            pic[10] = '                   |' #4
+                            pic[11] = '                   |' #5
+                            pic[12] = '                   |' #6
+                            pic[13] = ' ------------------+' #8
+                            
+                            
+                        elif misses ==3:
+                            pic[0]  = '         +---------+' #0
+                            pic[1]  = '        _|_        |' #1
+                            pic[2]  = '       [___]       |' #2
+                            pic[3]  = '      *********    |' #3
+                            pic[4]  = '      *     * *    |' #4
+                            pic[5]  = '      *     * *    |' #5
+                            pic[6]  = '      *     * *    |' #6
+                            pic[7]  = '      ******* *    |' #1
+                            pic[8]  = '              *    |' #2
+                            pic[9]  = '                   |' #3
+                            pic[10] = '                   |' #4
+                            pic[11] = '                   |' #5
+                            pic[12] = '                   |' #6
+                            pic[13] = ' ------------------+' #8
+                            
+                        elif misses ==4:
+                            pic[0]  = '         +---------+' #0
+                            pic[1]  = '        _|_        |' #1
+                            pic[2]  = '       [___]       |' #2
+                            pic[3]  = '    ***********    |' #3
+                            pic[4]  = '    * *     * *    |' #4
+                            pic[5]  = '    * *     * *    |' #5
+                            pic[6]  = '    * *     * *    |' #6
+                            pic[7]  = '    * ******* *    |' #1
+                            pic[8]  = '    *         *    |' #2
+                            pic[9]  = '                   |' #3
+                            pic[10] = '                   |' #4
+                            pic[11] = '                   |' #5
+                            pic[12] = '                   |' #6
+                            pic[13] = ' ------------------+' #8
+                        elif misses ==5:
+                            pic[0]  = '         +---------+' #0
+                            pic[1]  = '        _|_        |' #1
+                            pic[2]  = '       [___]       |' #2
+                            pic[3]  = '    ***********    |' #3
+                            pic[4]  = '    * *     * *    |' #4
+                            pic[5]  = '    * *     * *    |' #5
+                            pic[6]  = '    * *     * *    |' #6
+                            pic[7]  = '    * ******* *    |' #1
+                            pic[8]  = '    *      *  *    |' #2
+                            pic[9]  = '           *       |' #3
+                            pic[10] = '           *       |' #4
+                            pic[11] = '           *       |' #5
+                            pic[12] = '           *       |' #6
+                            pic[13] = ' ------------------+' #8
+                        elif misses ==6:
+                            pic[0]  = '         +---------+' #0
+                            pic[1]  = '        _|_        |' #1
+                            pic[2]  = '       [___]       |' #2
+                            pic[3]  = '    ***********    |' #3
+                            pic[4]  = '    * *     * *    |' #4
+                            pic[5]  = '    * *     * *    |' #5
+                            pic[6]  = '    * *     * *    |' #6
+                            pic[7]  = '    * ******* *    |' #1
+                            pic[8]  = '    *  *   *  *    |' #2
+                            pic[9]  = '       *   *       |' #3
+                            pic[10] = '       *   *       |' #4
+                            pic[11] = '       *   *       |' #5
+                            pic[12] = '       *   *       |' #6
+                            pic[13] = ' ------------------+' #8
+                            print ("Game Over")
+                            
+                    pic[14] = spaces
+                    f(pic)
+                   
             </textarea>
     </div>
   </body>
