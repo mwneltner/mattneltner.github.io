@@ -280,6 +280,81 @@
                     f(pic)
                    
             </textarea>
-    </div>
+        </textarea>
+        
+        <textarea rows="30" cols= "60">
+            # binary to decimal
+            
+            #convert sym to an int value
+            def convertSym(sym):
+                uniVal = ord(sym)
+            
+                if uniVal in range(48, 58):
+                    resultInt = uniVal - 48
+                else:
+                    resultInt = uniVal - 55
+            
+                return resultInt
+                    
+            
+            def convertToDecimal (startVal, inBase):
+                power = len(startVal) - 1
+                resultSum = 0
+            
+                for ch in startVal:
+                    powerOfBase = inBase**power
+                    resultSum = resultSum + (convertSym(ch) * powerOfBase)
+                    #print (ch)
+                    #print (powerOfBase)
+                    power = power - 1
+            
+                return resultSum
+            
+            def test ():
+                print (convertToDecimal('0', 2) == 0)
+                print (convertToDecimal('1', 2) == 1)
+                print (convertToDecimal('10', 2) == 2)
+                print (convertToDecimal('11', 2) == 3)
+                print (convertToDecimal('100', 2) == 4)
+                print (convertToDecimal('11', 8) == 9)
+                print (convertToDecimal('132', 4) == 30)
+                print (convertToDecimal('A0', 16) == 160)
+                print (convertSym('0') == 0)
+                print (convertSym('A') == 10)
+                print (convertSym('Z') == 35)
+            
+            def main():                        
+                inNum = input("Number? ")
+                fromBase = int(input("From Base? "))
+                decNum = convertToDecimal(inNum, fromBase)
+                print (decNum)
+            
+            #test()
+            main()
+            
+          </textarea>
+
+        </textarea>
+        
+        <textarea rows="30" cols= "60">
+            #Decimal to Binary
+            
+            inNum = int(input("Number? "))
+            
+            def convertToBinary(n):
+               """Function to print binary number
+               for the input decimal using recursion"""
+               if n > 1:
+                   convertToBinary(n//2)
+               print(n % 2,end = '')
+            
+            convertToBinary(inNum)
+            
+          </textarea>
+
+    
+    
+    
+        </div>
   </body>
 </html>
