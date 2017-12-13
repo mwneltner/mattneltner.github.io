@@ -1,0 +1,7 @@
+/** Checks a 1 bit input */
+CHIP NOT {
+    IN a;
+    OUT myOut;  // !a
+    PARTS:
+    Nand(a=a, b=a, out=myOut);
+}
